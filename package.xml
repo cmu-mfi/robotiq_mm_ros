@@ -1,0 +1,21 @@
+<package>
+  <name>robotiq_mm_ros</name>
+  <version>0.1.0</version>
+  <description>The robotiq_mm_ros package</description>
+  
+  <maintainer email="klz1@andrew.cmu.edu">Kevin Zhang</maintainer>
+  <license>MIT</license>
+  <author email="klz1@andrew.cmu.edu">Kevin Zhang</author>
+  <url type="website">https://github.com/cmu-mfi/robotiq_mm_ros</url>
+  <url type="bugtracker">https://github.com/cmu-mfi/robotiq_mm_ros/issues</url>
+  <url type="repository">https://github.com/cmu-mfi/robotiq_mm_ros</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>actionlib</build_depend>
+  <build_depend>actionlib_msgs</build_depend>
+  <build_depend>message_generation</build_depend>
+  
+  <run_depend>actionlib</run_depend>
+  <run_depend>actionlib_msgs</run_depend>
+  <run_depend>message_runtime</run_depend>
+</package>

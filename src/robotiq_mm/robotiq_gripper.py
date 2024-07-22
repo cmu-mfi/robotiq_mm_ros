@@ -10,7 +10,7 @@ Dependencies:
 MinimalModbus: https://pypi.org/project/MinimalModbus/
 """
 #Libraries importation
-import minimalmodbus as mm
+import robotiq_mm.minimalmodbus as mm
 import time
 
 #Communication setup

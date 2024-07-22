@@ -1,1 +1,1 @@
-docker build -t noetic_robotiq_mm_ros .
+docker build -t robotiq_mm_ros:noetic .

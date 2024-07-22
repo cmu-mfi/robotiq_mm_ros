@@ -28,7 +28,7 @@ To build the Docker image, run the following command:
 To run the Docker container, run the following command:
 
 ```bash
-./docker/run -i noetic_robotiq_mm_ros -c noetic_robotiq_mm_ros_container
+./docker/run -i robotiq_mm_ros:noetic -c robotiq_mm_ros_noetic
 ```
 
 Typically this first window should be used to run roscore

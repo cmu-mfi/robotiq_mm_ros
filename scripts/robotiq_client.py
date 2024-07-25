@@ -9,9 +9,8 @@ from robotiq_mm_ros.msg import *
 def robotiq_client():
     client = actionlib.SimpleActionClient('/yk_builder/move_gripper', GripperCommandAction)
 
-    print('here')
     client.wait_for_server()
-    print('done waiting')
+
     goal = GripperCommandGoal(position=0.05, velocity = 0.1, force=100)
 
     # Sends the goal to the action server.

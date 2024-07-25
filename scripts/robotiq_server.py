@@ -19,7 +19,7 @@ class RobotiqServer(object):
         # create messages that are used to publish feedback/result
         self._feedback = GripperCommandFeedback()
         self._result = GripperCommandResult()
-        self._as = actionlib.SimpleActionServer(self._action_name, GripperCommmandAction, execute_cb=self.gripper_command_cb, auto_start = False)
+        self._as = actionlib.SimpleActionServer(self._action_name, GripperCommandAction, execute_cb=self.gripper_command_cb, auto_start = False)
         self._as.start()
         self._s = rospy.Service(self._service_name, GetGripperPos, self.get_gripper_position)
 

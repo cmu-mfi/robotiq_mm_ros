@@ -10,20 +10,20 @@ from robotiq_mm_ros.srv import *
 from robotiq_mm.robotiq_gripper import RobotiqGripper
 
 class RobotiqServer(object):
-    # create messages that are used to publish feedback/result
-    _feedback = GripperCommandFeedback()
-    _result = GripperCommandResult()
 
     def __init__(self):
         self._gripper = RobotiqGripper("/dev/ttyUSB0")
         self._gripper.calibrate(0,50)
-        self._action_name = '/move_gripper'
-        self._service_name = '/get_gripper_pos'
+        self._action_name = 'move_gripper'
+        self._service_name = 'get_gripper_pos'
+        # create messages that are used to publish feedback/result
+        self._feedback = GripperCommandFeedback()
+        self._result = GripperCommandResult()
         self._as = actionlib.SimpleActionServer(self._action_name, GripperCommmandAction, execute_cb=self.gripper_command_cb, auto_start = False)
         self._as.start()
         self._s = rospy.Service(self._service_name, GetGripperPos, self.get_gripper_position)
 
-    def get_gripper_position(req):
+    def get_gripper_position(self, req):
         current_gripper_position = self._gripper.getPositionmm() * 0.001
         rospy.loginfo('%s: Current gripper position = %f.' % (self._service_name, current_gripper_position))
         return GetGripperPosResponse(current_gripper_position)

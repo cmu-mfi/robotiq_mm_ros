@@ -4,7 +4,7 @@ float64 velocity
 float64 force
 ---
 #response
+bool success
 float64 position
 ---
-bool success
 float64 position

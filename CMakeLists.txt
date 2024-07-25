@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 2.8.3)
 project(robotiq_mm_ros)
 
 find_package(catkin REQUIRED COMPONENTS
+  genmsg
   std_msgs
   actionlib
   actionlib_msgs
@@ -16,6 +17,7 @@ add_service_files(
 )
 
 add_action_files(
+  DIRECTORY action
   FILES
   GripperCommand.action
 )

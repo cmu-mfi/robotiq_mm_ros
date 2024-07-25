@@ -18,7 +18,7 @@ mm.BAUDRATE=115200
 mm.BYTESIZE=8
 mm.PARITY="N"
 mm.STOPBITS=1
-mm.TIMEOUT=0.5
+mm.TIMEOUT=1
 
 
 __author__  = "Benoit CASTETS"

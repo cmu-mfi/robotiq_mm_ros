@@ -40,7 +40,7 @@ class RobotiqServer(object):
         
         desired_position = int(goal.position*1000)
         desired_velocity = int(max(goal.velocity - 0.02, 0.0) * 255 / 0.13)
-        desired_force = int(max(goal.force - 20) * 255 / 165)
+        desired_force = int(max(goal.force - 20, 0.0) * 255 / 165)
 
         self._as.publish_feedback(self._feedback)
         success = self._gripper.goTomm(desired_position, desired_velocity, desired_force)

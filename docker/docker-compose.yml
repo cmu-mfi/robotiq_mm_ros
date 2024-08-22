@@ -14,8 +14,9 @@ services:
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
       - /etc/group:/etc/group:ro
+      - /dev:/dev
     privileged: true
     network_mode: "host"
     ipc: "host"
     restart: "unless-stopped"
-    command: bash -c "roslaunch robotiq_mm_ros robotiq_server.launch"
+    command: bash -c "source /ros1_ws/devel/setup.bash && roslaunch robotiq_mm_ros robotiq_server.launch"

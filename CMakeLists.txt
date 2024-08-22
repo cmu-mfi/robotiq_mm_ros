@@ -38,5 +38,7 @@ include_directories(
 
 catkin_install_python(PROGRAMS
   scripts/robotiq_server.py
+  scripts/open_gripper.py
+  scripts/close_gripper.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )

@@ -1,5 +1,5 @@
 <launch>
-    <arg name="namespace" default="yk_builder"/>
+    <arg name="namespace" default=""/>
     <group ns="$(arg namespace)">
         <node pkg="robotiq_mm_ros" name="robotiq_server" type="robotiq_server.py" output="screen">
         </node>

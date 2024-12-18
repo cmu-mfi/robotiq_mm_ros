@@ -12,7 +12,8 @@ from robotiq_mm.robotiq_gripper import RobotiqGripper
 class RobotiqServer(object):
 
     def __init__(self):
-        self._gripper = RobotiqGripper("/dev/ttyUSB0")
+        device = rospy.get_param('/node_name/device')
+        self._gripper = RobotiqGripper(device)
         self._gripper.calibrate(0,50)
         self._action_name = 'move_gripper'
         self._service_name = 'get_gripper_pos'

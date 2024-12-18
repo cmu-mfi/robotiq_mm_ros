@@ -1,13 +1,14 @@
 #! /usr/bin/env python
 
+import sys
 import rospy
 
 import actionlib
 
 from robotiq_mm_ros.msg import *
 
-def robotiq_client():
-    client = actionlib.SimpleActionClient('/yk_builder/move_gripper', GripperCommandAction)
+def robotiq_client(args):
+    client = actionlib.SimpleActionClient(f'/{args[0]}/move_gripper', GripperCommandAction)
 
     client.wait_for_server()
 
@@ -24,5 +25,6 @@ def robotiq_client():
 
 if __name__ == '__main__':
     rospy.init_node('robotiq_client')
-    robotiq_client()
+    myargv = rospy.myargv(argv=sys.argv)
+    robotiq_client(myargv)
 

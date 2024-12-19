@@ -8,7 +8,7 @@ import actionlib
 from robotiq_mm_ros.msg import *
 
 def robotiq_client(args):
-    client = actionlib.SimpleActionClient(f'/{args[0]}/move_gripper', GripperCommandAction)
+    client = actionlib.SimpleActionClient(f'/{args[1]}/move_gripper', GripperCommandAction)
 
     client.wait_for_server()
 

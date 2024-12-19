@@ -12,7 +12,7 @@ from robotiq_mm.robotiq_gripper import RobotiqGripper
 class RobotiqServer(object):
 
     def __init__(self):
-        device = rospy.get_param('/node_name/device')
+        device = rospy.get_param('/robotiq_mm_server/device')
         self._gripper = RobotiqGripper(device)
         self._gripper.calibrate(0,50)
         self._action_name = 'move_gripper'

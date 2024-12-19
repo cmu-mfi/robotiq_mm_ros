@@ -2,7 +2,7 @@
     <arg name="namespace" default=""/>
     <arg name="device" default="/dev/ttyUSB0"/>
     <group ns="$(arg namespace)">
-        <node pkg="robotiq_mm_ros" name="robotiq_server" type="robotiq_server.py" output="screen">
+        <node pkg="robotiq_mm_ros" name="robotiq_mm_server" type="robotiq_server.py" output="screen">
             <param name="device" value="$(arg device)" />
         </node>
     </group>
